@@ -487,30 +487,26 @@ header .container {
   transform: translateY(0%);
 }
 
-/* Footer */
+/* Footer styles */
 .footer {
   background-color: #2e2f42;
-  padding: 100px 0;
-}
-
-/*.footer-container {
-  display: flex;
-  align-items: baseline;
-  max-width: 100%;
-}*/
-
-.footer-content {
-  /*margin-right: 120px;*/
-  max-width: 264px;
+  padding: 100px 15px;
 }
 
 .footer-block {
   display: flex;
-  gap: 100px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+}
 
+.footer-content {
+  max-width: 264px;
 }
 
 .footer-logo {
+  display: block;
   color: #4d5ae5;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
@@ -521,26 +517,24 @@ header .container {
   margin-bottom: 16px;
 }
 
-.footer-logo-studio {
+.footer-logo-highlight {
   color: #f4f4fd;
 }
 
-.footer-text {
+.footer-description {
   color: #f4f4fd;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.02em;
   margin-top: 16px;
-  /*text-align: center;*/
 }
 
 .footer-social {
-  display: block;
   text-align: center;
 }
 
-.footer-text-social {
+.footer-social-title {
   margin-bottom: 16px;
   color: #ffffff;
   font-size: 16px;
@@ -550,17 +544,21 @@ header .container {
   text-align: center;
 }
 
-
-.footer-links {
+.footer-social-links {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 16px;
-  list-style-type: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   flex-wrap: wrap;
 }
 
-.footer-links-item {
+.footer-social-item {
+  display: flex;
+}
+
+.footer-social-link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -571,13 +569,25 @@ header .container {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-links-item:hover,
-.footer-links-item:focus {
+.footer-social-link:hover,
+.footer-social-link:focus {
   background-color: #31d0aa;
 }
 
-.footer-links-icon {
+.footer-social-icon {
   fill: #f4f4fd;
   width: 24px;
   height: 24px;
+}
+
+/* Adaptivity */
+@media (max-width: 768px) {
+  .footer-block {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-social-links {
+    justify-content: space-around;
+  }
 }
