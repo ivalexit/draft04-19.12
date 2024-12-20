@@ -139,7 +139,7 @@ a {
   color: #404BBF;
 }
 
-/* Hero - Solutions*/
+/* Hero-Solutions */
 .solutions {
 background-color: var(--NAVY-BLUE, #2E2F42);
 max-width: 1440px;
@@ -148,7 +148,7 @@ height: 600px;
 padding: 188px 0;
   background-image: linear-gradient(
     rgba(46, 47, 66, 0.7),
-    rgba(46, 47, 66, 0.7)), url(/images/people_office.jpg);
+    rgba(46, 47, 66, 0.7)), url(../images/people_office.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -512,7 +512,9 @@ letter-spacing: 0.02em;
 max-width: 264px;
 }
 
-.footer-icons-cont {}
+.footer-icons-cont {
+  margin-right: 80px;
+}
 
 .footer-icons-title {
   font-weight: 500;
@@ -553,14 +555,66 @@ background-color: #31d0aa;
 fill: #f4f4fd;
 }
 
-/* Adaptivity 
-@media (max-width: 768px) {
-  .footer-block {
-    flex-direction: column;
-    gap: 32px;
-  }
+.footer-form{
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+}
 
-  .footer-social-links {
-    justify-content: space-around;
-  }
-}*/
+.subscribe-text {
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.subscribe-email-input {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  width: 264px;
+  height: 40px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  background-color: transparent;
+  padding: 8px 16px;
+  outline: none;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: border;
+  font-size: 12px; 
+  line-height: 2;
+  letter-spacing: 0.04em; 
+  color: #ffffff;
+}
+
+.subscribe-email-input::placeholder{
+  color: #fff;
+}
+
+.subscribe-email-input:focus-visible{
+  border-color:  #31d0aa;
+}
+
+.subscribe-btn {
+  background: #4d5ae5;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  height: 40px;
+  min-width: 165px;
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.telegram-subscribe-icon{
+  margin-left: 16px;
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus{
+  background-color: #31d0aa; ;
+}
