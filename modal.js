@@ -1,37 +1,33 @@
-// Отримання елементів
-const overlay = document.querySelector('.overlay'); // Контейнер модального вікна
-const dialogBox = document.querySelector('.dialog-box'); // Саме модальне вікно
-const openButton = document.querySelector('[data-dialog]'); // Кнопка для відкриття
-const closeButton = document.querySelector('[data-dialog-close]'); // Кнопка для закриття
+(() => {
+    const refs = {
+        // Кнопка для відкриття модального вікна
+        openDialogBtn: document.querySelector("[data-dialog-open]"),
+        // Кнопка для закриття модального вікна
+        closeDialogBtn: document.querySelector("[data-dialog-close]"),
+        // Бекдроп діалогового вікна
+        dialog: document.querySelector("[data-dialog]"),
+    };
 
-// Функція для відкриття модального вікна
-function openModal() {
-    overlay.classList.add('is-open');
-    document.body.style.overflow = 'hidden'; // Блокує прокручування фону
-}
+    // Додаємо слухачі подій
+    refs.openDialogBtn.addEventListener("click", toggleDialog);
+    refs.closeDialogBtn.addEventListener("click", toggleDialog);
 
-// Функція для закриття модального вікна
-function closeModal() {
-    overlay.classList.remove('is-open');
-    document.body.style.overflow = ''; // Відновлює прокручування фону
-}
+    // Додаткове закриття по кліку на бекдроп
+    refs.dialog.addEventListener("click", (event) => {
+        if (event.target === refs.dialog) {
+            toggleDialog();
+        }
+    });
 
-// Обробник для кнопки відкриття
-openButton.addEventListener('click', openModal);
+    // Додаткове закриття по клавіші "Escape"
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && refs.dialog.classList.contains("is-visible")) {
+            toggleDialog();
+        }
+    });
 
-// Обробник для кнопки закриття
-closeButton.addEventListener('click', closeModal);
-
-// Закриття модального вікна при кліку на фон
-overlay.addEventListener('click', (event) => {
-    if (event.target === overlay) {
-        closeModal();
+    // Функція для управління відкриттям/закриттям діалогового вікна
+    function toggleDialog() {
+        refs.dialog.classList.toggle("is-visible");
     }
-});
-
-// Закриття модального вікна при натисканні клавіші Esc
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && overlay.classList.contains('is-open')) {
-        closeModal();
-    }
-});
+})();
