@@ -473,9 +473,7 @@ background: var(--OCEAN, #404BBF);
 
 
 
-/* Footer */
-
-
+/* Footer styles */
 .footer {
   background: var(--NAVY-BLUE, #2E2F42);
   padding: 100px 0;
@@ -581,6 +579,8 @@ fill: #f4f4fd;
   font-weight: 500;
   color: #fff;
   margin-bottom: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 .subscribe-email-input {
   border: 1px solid #fff;
