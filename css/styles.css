@@ -614,6 +614,9 @@ background: var(--OCEAN, #404BBF);
   margin-left: 8px;
 }
 
+.telegram-subscribe-icon{
+  margin-left: 16px;
+}
 
 /* Modal window */
 
