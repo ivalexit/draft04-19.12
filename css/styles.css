@@ -139,26 +139,24 @@ a {
   color: #404BBF;
 }
 
-/* Solutions */
+/* Solutions*/
 .solutions {
-  background-color: #2E2F42;
-  text-align: center;
-  padding: 188px 0;
-  height: 600px;
+  background-color: var(--NAVY-BLUE, #2E2F42);
   max-width: 1440px;
   margin: 0 auto;
-  background-image: linear-gradient(
+  height: 600px;
+  padding: 188px 0;
+    background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
-    url(../images/people_office.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.solutions-title {
-  color: #ffffff;
+      rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  .solutions-title {
+  color: var(--WHITE, #FFF);
   text-align: center;
   font-size: 56px;
   font-weight: 700;
@@ -168,29 +166,32 @@ a {
   margin-right: auto;
   max-width: 496px;
   margin-bottom: 48px;
-}
-
-.solutions-button {
-  display: block;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5; /* 150% */
-  letter-spacing: 0.04em;
-  background: #4d5ae5;
+  }
+  
+  .solutions-button {
+      color: var(--WHITE, #FFF);
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: 0.04em;
+  background: var(--IRIS, #4D5AE5);
   cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 16px 32px;
+  display: block;
   margin: 0 auto;
   min-width: 169px;
-  height: 56px;
-  border-radius: 4px;
-  border: none;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.solutions-button:hover,
-.solutions-button:focus {
-  background: #404BBF;
-}
+  }
+  
+  
+  .solutions-button:hover,
+  .solutions-button:focus {
+  background: var(--OCEAN, #404BBF);
+  }
 
 /* Advantages */
 
