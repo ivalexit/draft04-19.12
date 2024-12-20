@@ -610,9 +610,11 @@ background: var(--OCEAN, #404BBF);
   background-color: #31d0aa;
 }
 
+/*
 .subscribe-btn svg {
   margin-left: 8px;
 }
+*/
 
 .telegram-subscribe-icon{
   margin-left: 16px;
