@@ -483,7 +483,9 @@ background: var(--OCEAN, #404BBF);
 
 .footer .container {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
 
 .footer-container {
