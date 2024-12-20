@@ -139,7 +139,7 @@ a {
   color: #404BBF;
 }
 
-/* Solutions*/
+/* Hero - Solutions*/
 .solutions {
 background-color: var(--NAVY-BLUE, #2E2F42);
 max-width: 1440px;
@@ -193,7 +193,6 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 background: var(--OCEAN, #404BBF);
 }
 
-/* Advantages */
 
 /* Advantages */
 
@@ -554,7 +553,7 @@ background-color: #31d0aa;
 fill: #f4f4fd;
 }
 
-/* Adaptivity */
+/* Adaptivity 
 @media (max-width: 768px) {
   .footer-block {
     flex-direction: column;
@@ -564,4 +563,4 @@ fill: #f4f4fd;
   .footer-social-links {
     justify-content: space-around;
   }
-}
+}*/
