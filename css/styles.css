@@ -638,8 +638,7 @@ fill: #f4f4fd;
 
 /* Modal window */
 
-.backdrop{
-    
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -650,38 +649,35 @@ fill: #f4f4fd;
   visibility: hidden;
   pointer-events: none;
   opacity: 0;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: opacity, visibility;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.backdrop.is-open{
-  visibility:visible;
-  pointer-events:auto;
+
+.overlay.is-visible {
+  visibility: visible;
+  pointer-events: auto;
   opacity: 1;
 }
 
-
-.modal-window {
+.dialog-box {
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 408px;
   min-height: 584px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.12), 0 2px 1px rgba(0, 0, 0, 0.2);
   background: #fcfcfc;
   border-radius: 4px;
   padding: 24px;
   padding-top: 72px;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: transform;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop:not(.is-open) .modal-window{   
+.overlay:not(.is-visible) .dialog-box {
   transform: translate(-50%, -80%);
-
 }
 
-.form-close-btn {
+.dialog-close-btn {
   padding: 0;
   display: flex;
   justify-content: center;
@@ -693,36 +689,34 @@ fill: #f4f4fd;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #e7e9fc;
-  min-width: 24px;
+  width: 24px;
   height: 24px;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: background-color, border;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-close-btn:hover,
-.form-close-btn:focus{
+.dialog-close-btn:hover,
+.dialog-close-btn:focus {
   background-color: #404bbf;
   border: none;
 }
 
-
-.modal-close-icon{
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+.dialog-close-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-close-btn:hover .modal-close-icon,
-.form-close-btn:focus .modal-close-icon{
+.dialog-close-btn:hover .dialog-close-icon,
+.dialog-close-btn:focus .dialog-close-icon {
   fill: #fff;
 }
 
-.modal-text {
+.dialog-message {
   font-weight: 500;
   text-align: center;
   color: #2e2f42;
   margin-bottom: 16px;
 }
 
-.modal-form-label {
+.dialog-label {
   display: block;
   font-size: 12px;
   line-height: 1.17;
@@ -731,56 +725,53 @@ fill: #f4f4fd;
   margin-bottom: 4px;
 }
 
-.modal-form-wrapper {
+.dialog-input-wrapper {
   position: relative;
 }
 
-.modal-form-field{
+.dialog-field {
   margin-bottom: 8px;
 }
 
-.modal-form-field.text-area{
+.dialog-field.textarea {
   margin-bottom: 16px;
 }
 
-.modal-form-field.checkbox{
+.dialog-field.checkbox {
   margin-bottom: 24px;
 }
 
-.modal-form-input {
+.dialog-input {
   padding: 8px 16px;
   padding-left: 38px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   width: 100%;
   height: 40px;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: border-color;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   outline: transparent;
   background-color: transparent;
 }
 
-.modal-form-input:focus-visible,
-.modal-form-input:active{
+.dialog-input:focus-visible {
   border: 1px solid #4d5ae5;
 }
 
-.modal-form-input:focus-visible + .modal-input-icon  ,
-.modal-form-input:active + .modal-input-icon {
+.dialog-input:focus-visible + .dialog-icon {
   fill: #4d5ae5;
 }
 
-.modal-input-icon {
+.dialog-icon {
   position: absolute;
   top: 50%;
   left: 16px;
-  transform:  translateY(-50%); 
+  transform: translateY(-50%);
   fill: #2e2f42;
   pointer-events: none;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: fill;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-form-textarea {
+
+.dialog-textarea {
   padding: 8px 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
@@ -793,25 +784,18 @@ fill: #f4f4fd;
   letter-spacing: 0.04em;
   background-color: transparent;
   color: rgba(46, 47, 66, 0.4);
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form-textarea:focus-visible,
-.modal-form-textarea:active{
-  border: #4d5ae5;
+.dialog-textarea:focus-visible {
+  border-color: #4d5ae5;
 }
 
-
-
-.modal-form-textarea::placeholder{
-  color: rgba(46, 47, 66, 0.4);
-}
-
-.modal-form-checkbox {
+.dialog-checkbox {
   display: inline-block;
 }
 
-.modal-checkbox-mark{
+.dialog-checkbox-mark {
   fill: transparent;
   width: 16px;
   height: 16px;
@@ -821,34 +805,26 @@ fill: #f4f4fd;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: background-color, border, fill;
-
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form-checkbox:checked + .modal-form-label > .modal-checkbox-mark{
+.dialog-checkbox:checked + .dialog-label > .dialog-checkbox-mark {
   background-color: #404BBF;
   border: none;
-  fill:#F4F4FD;;
+  fill: #F4F4FD;
 }
 
-.modal-form-checkbox:focus-visible + .modal-form-label > .modal-checkbox-mark{
+.dialog-checkbox:focus-visible + .dialog-label > .dialog-checkbox-mark {
   outline: 1px solid #404BBF;
   outline-offset: 2px;
 }
 
-.modal-form-privacy-link{
+.dialog-privacy-link {
   line-height: 1.33333;
   text-decoration: underline;
-  text-decoration-skip-ink: none;
   color: #4d5ae5;
 }
 
-.modal-form-send-btn {
+.dialog-submit-btn {
   display: block;
-}
-
-.modal-form-send-btn:hover,
-.modal-form-send-btn:focus{
-  border: none;
 }
