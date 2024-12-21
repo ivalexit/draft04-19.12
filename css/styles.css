@@ -606,12 +606,6 @@ background: var(--OCEAN, #404BBF);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.telegram-icon {
-  width: 16px; /* Розмір іконки */
-  height: 16px;
-  fill: #fff; /* Колір іконки */
-}
-
 .subscribe-btn:hover,
 .subscribe-btn:focus {
   background-color: #31d0aa;
@@ -623,7 +617,6 @@ background: var(--OCEAN, #404BBF);
 }
 
 .telegram-subscribe-icon{
-  margin-left: 16px;
   width: 24px;
   height: 24px;
   margin-left: 8px;
