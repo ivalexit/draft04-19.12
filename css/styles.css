@@ -589,9 +589,9 @@ background: var(--OCEAN, #404BBF);
 }
 
 .subscribe-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-flex; /* Для розташування тексту та іконки в рядок */
+  align-items: center; /* Вертикальне вирівнювання */
+  justify-content: center; /* Горизонтальне вирівнювання */
   background: #4d5ae5;
   color: #fff;
   font-weight: 500;
@@ -600,9 +600,16 @@ background: var(--OCEAN, #404BBF);
   cursor: pointer;
   text-align: center;
   height: 40px;
-  width: 100px;
+  width: 100px; /* Ширина кнопки */
   margin-left: 16px;
+  gap: 8px; /* Відстань між текстом і іконкою */
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.telegram-icon {
+  width: 16px; /* Розмір іконки */
+  height: 16px;
+  fill: #fff; /* Колір іконки */
 }
 
 .subscribe-btn:hover,
